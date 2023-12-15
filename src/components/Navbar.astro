@@ -1,0 +1,33 @@
+---
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  //{ name: 'Research', href: '/research' },
+  //{ name: 'Projects', href: '/projects' },
+  //{ name: 'Publications', href: '/publications' },
+  //{ name: 'Team', href: '/team' },
+  //{ name: 'Contact', href: '/contact' },
+];
+---
+
+<nav class="bg-gray-900 text-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center text-xl font-bold hover:text-gray-300">
+          HULA <img src="src/assets/uh-logo.png" alt="UH Logo" class="h-8 ml-4" />
+        </a>
+      </div>
+      <div class="flex items-center">
+        {navItems.map(item => (
+          <a href={item.href} class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 ml-4">
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>
